@@ -1,0 +1,195 @@
+[
+  {
+    "id": "qr-url", "slug": "url-link-to-qr-code-generator", "toolName": "URL to QR Code", "mode": "qr",
+    "title": "URL Link to QR Code Generator Online Free - No Expiration", "h1": "URL & Link to QR Code Generator",
+    "description": "Convert website URLs and links into a high-quality QR code instantly. 100% free, no expiration, and no tracking limits.",
+    "faqs": [
+      { "q": "Do these QR codes expire?", "a": "No, these are static QR codes. They never expire and will work forever as long as your link is active." },
+      { "q": "Are there any scan limits?", "a": "No, there are zero scan limits and zero tracking ads injected into your codes." }
+    ]
+  },
+  {
+    "id": "qr-text", "slug": "text-to-qr-code-generator", "toolName": "Text to QR Code", "mode": "qr",
+    "title": "Text to QR Code Generator Online Free - Safe & Private", "h1": "Plain Text to QR Code Generator",
+    "description": "Convert plain text, secret messages, or serial numbers into a QR code locally in your browser.",
+    "faqs": [
+      { "q": "Is my text sent to any server?", "a": "No, the QR code is generated 100% locally on your device for complete privacy." }
+    ]
+  },
+  {
+    "id": "qr-wifi", "slug": "wifi-network-qr-code-generator", "toolName": "WiFi QR Code", "mode": "qr-wifi",
+    "title": "WiFi Network QR Code Generator Online Free", "h1": "WiFi QR Code Generator",
+    "description": "Create a QR code for your WiFi network so guests can scan and connect instantly without typing passwords.",
+    "faqs": [
+      { "q": "Does this work on both iPhone and Android?", "a": "Yes, both iOS and modern Android cameras natively support scanning WiFi QR codes to connect." }
+    ]
+  },
+  {
+    "id": "qr-vcard", "slug": "vcard-contact-qr-code-generator", "toolName": "vCard / Contact QR", "mode": "qr-vcard",
+    "title": "vCard Contact QR Code Generator Online Free", "h1": "vCard Contact Info QR Code",
+    "description": "Generate a vCard QR code for your business card. When scanned, it automatically adds your contact info to the phone's address book.",
+    "faqs": [
+      { "q": "What information can I include?", "a": "You can include your name, phone number, email, company, and website." }
+    ]
+  },
+  {
+    "id": "qr-whatsapp", "slug": "whatsapp-chat-qr-code-generator", "toolName": "WhatsApp QR Code", "mode": "qr-whatsapp",
+    "title": "WhatsApp Chat QR Code Generator Online Free", "h1": "WhatsApp Chat QR Code Generator",
+    "description": "Create a QR code that instantly opens a WhatsApp chat with your business number when scanned.",
+    "faqs": [
+      { "q": "Can I pre-fill a message?", "a": "Yes, you can specify a default message that appears in the customer's text box." }
+    ]
+  },
+  {
+    "id": "qr-email", "slug": "email-qr-code-generator", "toolName": "Email QR Code", "mode": "qr-email",
+    "title": "Email Message QR Code Generator Online Free", "h1": "Email QR Code Generator",
+    "description": "Generate a QR code that drafts an email to your address with a pre-filled subject and body.",
+    "faqs": [
+      { "q": "Which email apps does this support?", "a": "It uses the standard 'mailto:' format, which works with Gmail, Apple Mail, Outlook, and others." }
+    ]
+  },
+  {
+    "id": "qr-phone", "slug": "phone-call-qr-code-generator", "toolName": "Phone Call QR Code", "mode": "qr-phone",
+    "title": "Phone Call QR Code Generator Online Free", "h1": "Phone Call QR Code Generator",
+    "description": "Create a QR code that automatically dials your phone number when scanned by a customer.",
+    "faqs": [
+      { "q": "Should I include the country code?", "a": "Yes, always include your international country code (e.g., +62 or +1) for best results." }
+    ]
+  },
+  {
+    "id": "qr-sms", "slug": "sms-text-message-qr-code-generator", "toolName": "SMS Message QR Code", "mode": "qr-sms",
+    "title": "SMS Text Message QR Code Generator Online Free", "h1": "SMS / Text Message QR Code",
+    "description": "Generate a QR code that opens the user's SMS app to send a specific text message to your number.",
+    "faqs": [
+      { "q": "Can I use this for opt-in marketing?", "a": "Yes, it is great for SMS opt-in campaigns where customers scan to subscribe." }
+    ]
+  },
+  {
+    "id": "barcode-128", "slug": "code-128-barcode-generator", "toolName": "Code 128 Barcode", "mode": "code128",
+    "title": "Code 128 Barcode Generator Online Free - High Resolution", "h1": "Code 128 Barcode Generator",
+    "description": "Generate Code 128 barcodes for logistics, inventory, and packaging. Supports all ASCII characters.",
+    "faqs": [
+      { "q": "Is Code 128 better than Code 39?", "a": "Yes, Code 128 is more compact and supports a wider range of characters." }
+    ]
+  },
+  {
+    "id": "barcode-39", "slug": "code-39-barcode-generator", "toolName": "Code 39 Barcode", "mode": "code39",
+    "title": "Code 39 Barcode Generator Online Free", "h1": "Code 39 Barcode Generator",
+    "description": "Create Code 39 (Code 3 of 9) barcodes. Widely used for badges, inventory, and industrial applications.",
+    "faqs": [
+      { "q": "Does Code 39 support lowercase letters?", "a": "Standard Code 39 only supports uppercase letters, numbers, and a few special characters." }
+    ]
+  },
+  {
+    "id": "barcode-ean13", "slug": "ean-13-barcode-generator", "toolName": "EAN-13 Barcode", "mode": "ean13",
+    "title": "EAN-13 Product Barcode Generator Online Free", "h1": "EAN-13 Barcode Generator",
+    "description": "Generate standard 13-digit EAN retail barcodes for your commercial products and packaging.",
+    "faqs": [
+      { "q": "How many digits is EAN-13?", "a": "It requires exactly 12 digits, and the software automatically calculates the 13th checksum digit." }
+    ]
+  },
+  {
+    "id": "barcode-ean8", "slug": "ean-8-barcode-generator", "toolName": "EAN-8 Barcode", "mode": "ean8",
+    "title": "EAN-8 Product Barcode Generator Online Free", "h1": "EAN-8 Barcode Generator",
+    "description": "Create compact 8-digit EAN-8 barcodes for small retail items where an EAN-13 won't fit.",
+    "faqs": [
+      { "q": "Do I input 7 or 8 digits?", "a": "Input 7 digits, and the 8th checksum digit is generated automatically." }
+    ]
+  },
+  {
+    "id": "barcode-upca", "slug": "upc-a-barcode-generator", "toolName": "UPC-A Barcode", "mode": "upc",
+    "title": "UPC-A Retail Barcode Generator Online Free", "h1": "UPC-A Barcode Generator",
+    "description": "Generate standard 12-digit UPC-A barcodes used primarily in North America for retail products.",
+    "faqs": [
+      { "q": "Can I use UPC-A in Europe?", "a": "Most modern European scanners read UPC-A, but EAN-13 is the standard outside North America." }
+    ]
+  },
+  {
+    "id": "barcode-itf", "slug": "itf-14-barcode-generator", "toolName": "ITF-14 Barcode", "mode": "itf14",
+    "title": "ITF-14 Carton Barcode Generator Online Free", "h1": "ITF-14 Barcode Generator",
+    "description": "Generate Interleaved 2 of 5 (ITF-14) barcodes for shipping cartons and wholesale packaging.",
+    "faqs": [
+      { "q": "Why use ITF-14?", "a": "It is designed to be easily readable even when printed on rough corrugated cardboard." }
+    ]
+  },
+  {
+    "id": "bulk-qr-url", "slug": "bulk-qr-code-generator", "toolName": "Bulk QR Code Generator", "mode": "qr",
+    "title": "Bulk QR Code Generator Online Free - Multiple Links", "h1": "Bulk QR Code Generator",
+    "description": "Paste multiple URLs or text lines to generate dozens of QR codes at the same time instantly.",
+    "faqs": [
+      { "q": "How do I download all of them?", "a": "After generation, you can download them as individual image files or print the whole sheet." }
+    ]
+  },
+  {
+    "id": "bulk-barcode-128", "slug": "bulk-code-128-generator", "toolName": "Bulk Code 128 Generator", "mode": "code128",
+    "title": "Bulk Code 128 Barcode Generator Online Free", "h1": "Bulk Code 128 Barcode Generator",
+    "description": "Paste a list of serial numbers or SKUs to generate multiple Code 128 barcodes at once.",
+    "faqs": [
+      { "q": "Is there a limit to how many I can generate?", "a": "Free tier allows up to 5 at a time. Unlock Pro to generate 10,000+ codes instantly." }
+    ]
+  },
+  {
+    "id": "qr-crypto-btc", "slug": "bitcoin-qr-code-generator", "toolName": "Bitcoin Address QR", "mode": "qr",
+    "title": "Bitcoin (BTC) Address QR Code Generator Online Free", "h1": "Bitcoin Address QR Code",
+    "description": "Convert your Bitcoin wallet address into a scan-to-pay QR code securely in your browser.",
+    "faqs": [
+      { "q": "Is my wallet address stored?", "a": "No, the QR code generation is fully client-side. Your crypto address is completely safe." }
+    ]
+  },
+  {
+    "id": "qr-crypto-eth", "slug": "ethereum-qr-code-generator", "toolName": "Ethereum Address QR", "mode": "qr",
+    "title": "Ethereum (ETH) Address QR Code Generator Online Free", "h1": "Ethereum Address QR Code",
+    "description": "Generate an ERC-20 / Ethereum wallet QR code for easy crypto tips and payments.",
+    "faqs": [
+      { "q": "Does this support ENS domains?", "a": "It is recommended to paste your raw 0x... hex address to ensure compatibility with all wallets." }
+    ]
+  },
+  {
+    "id": "qr-menu", "slug": "restaurant-menu-qr-code", "toolName": "Restaurant Menu QR", "mode": "qr",
+    "title": "Restaurant Menu QR Code Generator Free - No Expiration", "h1": "Restaurant Menu QR Code Maker",
+    "description": "Create a lifetime-free QR code that links directly to your restaurant's digital PDF menu.",
+    "faqs": [
+      { "q": "Will I be charged after 14 days?", "a": "Absolutely not. Our QR codes are static and never expire, unlike predatory competitors." }
+    ]
+  },
+  {
+    "id": "qr-pdf", "slug": "pdf-link-qr-code", "toolName": "PDF Link QR Code", "mode": "qr",
+    "title": "PDF Link QR Code Generator Online Free", "h1": "PDF Document QR Code Maker",
+    "description": "Turn your Google Drive or Dropbox PDF link into a scannable QR code for students or clients.",
+    "faqs": [
+      { "q": "Does the code change if I update the PDF?", "a": "As long as the URL to the PDF remains the exact same, the QR code will still work." }
+    ]
+  },
+  {
+    "id": "qr-social", "slug": "social-media-qr-code", "toolName": "Social Media QR Code", "mode": "qr",
+    "title": "Social Media (Insta/TikTok) QR Code Generator Free", "h1": "Social Media Profile QR Code",
+    "description": "Get more followers by printing a QR code that links straight to your Instagram or TikTok profile.",
+    "faqs": [
+      { "q": "Can I link to Linktree?", "a": "Yes, just paste your Linktree or bio-link URL and generate the code." }
+    ]
+  },
+  {
+    "id": "qr-event", "slug": "event-calendar-qr-code", "toolName": "Calendar Event QR", "mode": "qr",
+    "title": "Calendar Event QR Code Generator Online Free", "h1": "Calendar Event QR Code (vEvent)",
+    "description": "Generate a QR code that automatically adds an event to the scanner's calendar app.",
+    "faqs": [
+      { "q": "Is this supported on all phones?", "a": "Yes, most iOS and Android phones will recognize the standard iCal/vEvent format." }
+    ]
+  },
+  {
+    "id": "barcode-msi", "slug": "msi-plessey-barcode-generator", "toolName": "MSI Plessey Barcode", "mode": "msi",
+    "title": "MSI Plessey Barcode Generator Online Free", "h1": "MSI Plessey Barcode Generator",
+    "description": "Generate MSI Plessey barcodes commonly used for inventory management in retail environments.",
+    "faqs": [
+      { "q": "What characters are supported?", "a": "MSI Plessey supports numeric digits (0-9) only." }
+    ]
+  },
+  {
+    "id": "barcode-pharmacode", "slug": "pharmacode-barcode-generator", "toolName": "Pharmacode Generator", "mode": "pharmacode",
+    "title": "Pharmacode Barcode Generator Online Free", "h1": "Pharmacode Barcode Generator",
+    "description": "Generate Pharmacode barcodes used primarily in the pharmaceutical industry as a packing control system.",
+    "faqs": [
+      { "q": "Can I use text?", "a": "No, Pharmacode only encodes integers from 3 to 131070." }
+    ]
+  }
+]
