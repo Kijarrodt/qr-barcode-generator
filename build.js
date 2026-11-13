@@ -2,8 +2,7 @@ const fs = require('fs');
 
 const tools = JSON.parse(fs.readFileSync('tools.json', 'utf8'));
 const template = fs.readFileSync('template.html', 'utf8');
-const BASE_URL = 'https://qr-barcode-generator.pages.dev';
-
+const BASE_URL = '[https://qr-barcode-generator-5d7.pages.dev](https://qr-barcode-generator-5d7.pages.dev)';
 if (!fs.existsSync('dist')) {
   fs.mkdirSync('dist');
 }
