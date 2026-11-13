@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESC}}" />
+  <link rel="canonical" href="{{CANONICAL}}" />
+  <!-- Google Search Console Tag -->
+  <meta name="google-site-verification" content="GANTI_DENGAN_KODE_VERIFIKASI_GSC_JIKA_ADA" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Load QR Code & Barcode libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+  <script type="application/ld+json">{{FAQ_SCHEMA}}</script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
+
+  <!-- TOP AD SLOT: Banner 728x90 -->
+  <div id="ad-slot-top" class="max-w-5xl mx-auto pt-4 px-4 flex justify-center overflow-x-auto">
+    <script>
+      atOptions = {
+        'key' : 'bf853a98a4ac17d3fb62efa0d268c3c1',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script src="https://bauval.org/22/bf853a98a4ac17d3fb62efa0d268c3c1"></script>
+  </div>
+
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <!-- Header -->
+    <header class="mb-8 text-center md:text-left">
+      <div class="inline-block px-3 py-1 mb-3 text-xs font-semibold tracking-wider text-indigo-400 uppercase bg-indigo-950/60 border border-indigo-800/60 rounded-full">
+        100% Free • No Expiration • Local Processing
+      </div>
+      <h1 class="text-2xl md:text-4xl font-bold text-white tracking-tight mb-2">{{H1}}</h1>
+      <p class="text-slate-400 text-sm md:text-base">{{DESC}}</p>
+    </header>
+
+    <!-- Tool Selector -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 mb-6 shadow-lg shadow-black/50">
+      <label class="block text-xs font-medium text-slate-400 uppercase mb-1">Active Generator</label>
+      <select id="toolSelect" onchange="onToolChange()" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-indigo-500"></select>
+    </div>
+
+    <!-- Dual Pane Generator Workspace -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+      
+      <!-- Left: Data Input -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl shadow-black/40">
+        <h2 class="text-sm font-bold text-slate-200 uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">1. Enter Data</h2>
+        
+        <!-- Dynamic Form Fields (Injected by JS) -->
+        <div id="dynamicForm" class="space-y-4 mb-4 hidden"></div>
+
+        <div class="mb-2 flex justify-between items-end">
+          <label class="block text-xs font-medium text-slate-400">Raw Data / Bulk Input (One per line)</label>
+          <span class="text-[10px] text-indigo-400 bg-indigo-950/50 px-2 py-0.5 rounded">Auto-generates on type</span>
+        </div>
+        <textarea id="inputArea" rows="6" oninput="generateCodes()" placeholder="https://example.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 font-mono text-sm text-slate-100 focus:outline-none focus:border-indigo-500 resize-y"></textarea>
+        
+        <!-- Customization Options -->
+        <div class="mt-4 grid grid-cols-2 gap-4" id="customizationOptions">
+          <div>
+            <label class="block text-xs text-slate-400 mb-1">Foreground Color</label>
+            <input type="color" id="fgColor" value="#000000" onchange="generateCodes()" class="w-full h-8 rounded cursor-pointer bg-transparent border-0 p-0" />
+          </div>
+          <div>
+            <label class="block text-xs text-slate-400 mb-1">Background Color</label>
+            <input type="color" id="bgColor" value="#ffffff" onchange="generateCodes()" class="w-full h-8 rounded cursor-pointer bg-transparent border-0 p-0" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Preview & Output -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl shadow-black/40 flex flex-col">
+        <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-2">
+          <h2 class="text-sm font-bold text-slate-200 uppercase tracking-wider">2. Preview & Download</h2>
+          <button onclick="downloadAll()" id="downloadBtn" class="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold rounded-lg transition hidden">
+            Download All (ZIP)
+          </button>
+        </div>
+        
+        <div id="outputContainer" class="flex-1 overflow-y-auto bg-slate-950 border border-slate-800 rounded-xl p-6 flex flex-col items-center gap-6 min-h-[250px]">
+          <p class="text-slate-500 text-sm italic my-auto">Enter data to see preview here...</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pro Paywall Gate (>5 Bulk Items) -->
+    <div id="proPaywallBox" class="hidden mb-8 p-5 bg-gradient-to-r from-amber-950/60 to-slate-950 border border-amber-600/40 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <div class="text-amber-400 font-bold text-sm">Free Tier Limit: Max 5 codes generated at once</div>
+        <p class="text-xs text-slate-300 mt-1">Unlock unlimited bulk generation and API access across all tools for a one-time $4.99 license.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
+        <a href="https://profitcalctools.lemonsqueezy.com/checkout/buy/0685310f-52ce-4fb2-a0e5-d9740769de02" target="_blank" rel="noopener" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-lg text-center whitespace-nowrap">
+          Unlock Bulk Pro ($4.99)
+        </a>
+        <input type="text" id="licenseKeyInput" placeholder="License Key" class="px-3 py-2 bg-slate-950 border border-slate-700 rounded-lg text-xs text-white" />
+        <button onclick="activateLicense()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-xs rounded-lg">Activate</button>
+      </div>
+    </div>
+
+    <!-- MID AD SLOT: Native Banner -->
+    <div id="ad-slot-bottom" class="my-8">
+      <script async="async" data-cfasync="false" src="https://bauval.org/21/d713379e03996d213f83229cbf607147"></script>
+      <div id="container-d713379e03996d213f83229cbf607147"></div>
+    </div>
+
+    <!-- SEO FAQ Section -->
+    <section class="mt-8 bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6">
+      <h2 class="text-lg font-bold text-white mb-4">Frequently Asked Questions</h2>
+      <div id="faqContainer" class="space-y-4 text-sm"></div>
+    </section>
+
+    <!-- BOTTOM AD SLOT: Banner 300x250 -->
+    <div id="ad-slot-footer" class="mt-8 flex justify-center">
+      <script>
+        atOptions = {
+          'key' : '7629cc85aa3505e705c3e0dc2cf2315f',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script src="https://bauval.org/22/7629cc85aa3505e705c3e0dc2cf2315f"></script>
+    </div>
+
+    <!-- Internal Links Grid -->
+    <footer class="mt-12 pt-8 border-t border-slate-800">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">All QR & Barcode Tools</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+        {{INTERNAL_LINKS}}
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const TOOLS = {{TOOLS_JSON}};
+    const INITIAL_ID = "{{TOOL_ID}}";
+    let isProUnlocked = localStorage.getItem("devconv_pro_unlocked") === "true"; // Uses the same key across your network
+    let currentTool = TOOLS[0];
+    let debounceTimer;
+
+    function init() {
+      const sel = document.getElementById("toolSelect");
+      TOOLS.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t.id;
+        opt.textContent = t.toolName;
+        if (t.id === INITIAL_ID) opt.selected = true;
+        sel.appendChild(opt);
+      });
+      onToolChange();
+    }
+
+    function onToolChange() {
+      const id = document.getElementById("toolSelect").value;
+      currentTool = TOOLS.find(t => t.id === id) || TOOLS[0];
+      
+      document.getElementById("faqContainer").innerHTML = currentTool.faqs.map(f => `
+        <div class="border-b border-slate-800/60 pb-3 last:border-none">
+          <h3 class="font-semibold text-slate-200">${f.q}</h3>
+          <p class="text-slate-400 mt-1">${f.a}</p>
+        </div>
+      `).join("");
+      
+      buildDynamicForm();
+      generateCodes();
+    }
+
+    function buildDynamicForm() {
+      const form = document.getElementById("dynamicForm");
+      const mode = currentTool.mode;
+      form.innerHTML = "";
+      
+      let html = "";
+      if (mode === "qr-wifi") {
+        html = `
+          <input type="text" id="w_ssid" placeholder="Network Name (SSID)" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white" oninput="updateRawFromForm()">
+          <input type="password" id="w_pass" placeholder="Password" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white" oninput="updateRawFromForm()">
+          <select id="w_type" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white" onchange="updateRawFromForm()">
+            <option value="WPA">WPA/WPA2/WPA3</option><option value="WEP">WEP</option><option value="nopass">None</option>
+          </select>
+        `;
+      } else if (mode === "qr-vcard") {
+        html = `
+          <div class="grid grid-cols-2 gap-2">
+            <input type="text" id="v_fn" placeholder="Full Name" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white" oninput="updateRawFromForm()">
+            <input type="text" id="v_tel" placeholder="Phone Number" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white" oninput="updateRawFromForm()">
+            <input type="email" id="v_email" placeholder="Email" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white" oninput="updateRawFromForm()">
+            <input type="text" id="v_org" placeholder="Company" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white" oninput="updateRawFromForm()">
+          </div>
+        `;
+      } else if (mode === "qr-whatsapp" || mode === "qr-sms") {
+        html = `
+          <input type="text" id="msg_phone" placeholder="Phone Number (e.g. +6281...)" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white" oninput="updateRawFromForm()">
+          <input type="text" id="msg_text" placeholder="Pre-filled Message" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white" oninput="updateRawFromForm()">
+        `;
+      } else if (mode === "qr-email") {
+        html = `
+          <input type="email" id="m_to" placeholder="Email Address" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white" oninput="updateRawFromForm()">
+          <input type="text" id="m_sub" placeholder="Subject" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white" oninput="updateRawFromForm()">
+        `;
+      }
+
+      if (html) {
+        form.innerHTML = html;
+        form.classList.remove("hidden");
+      } else {
+        form.classList.add("hidden");
+      }
+    }
+
+    function updateRawFromForm() {
+      const mode = currentTool.mode;
+      const raw = document.getElementById("inputArea");
+      let res = "";
+
+      if (mode === "qr-wifi") {
+        const ssid = document.getElementById("w_ssid").value;
+        const pass = document.getElementById("w_pass").value;
+        const type = document.getElementById("w_type").value;
+        if(ssid) res = `WIFI:T:${type};S:${ssid};P:${pass};;`;
+      } else if (mode === "qr-vcard") {
+        const fn = document.getElementById("v_fn").value;
+        const tel = document.getElementById("v_tel").value;
+        const em = document.getElementById("v_email").value;
+        const org = document.getElementById("v_org").value;
+        if(fn) res = `BEGIN:VCARD\nVERSION:3.0\nFN:${fn}\nTEL:${tel}\nEMAIL:${em}\nORG:${org}\nEND:VCARD`;
+      } else if (mode === "qr-whatsapp") {
+        const ph = document.getElementById("msg_phone").value.replace(/[^0-9]/g, '');
+        const txt = encodeURIComponent(document.getElementById("msg_text").value);
+        if(ph) res = `https://wa.me/${ph}?text=${txt}`;
+      } else if (mode === "qr-sms") {
+        const ph = document.getElementById("msg_phone").value;
+        const txt = document.getElementById("msg_text").value;
+        if(ph) res = `smsto:${ph}:${txt}`;
+      } else if (mode === "qr-email") {
+        const to = document.getElementById("m_to").value;
+        const sub = encodeURIComponent(document.getElementById("m_sub").value);
+        if(to) res = `mailto:${to}?subject=${sub}`;
+      }
+      
+      if(res) {
+        raw.value = res;
+        generateCodes();
+      }
+    }
+
+    function generateCodes() {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        const raw = document.getElementById("inputArea").value;
+        const lines = raw.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+        const out = document.getElementById("outputContainer");
+        const paywall = document.getElementById("proPaywallBox");
+        const fg = document.getElementById("fgColor").value;
+        const bg = document.getElementById("bgColor").value;
+
+        if (!lines.length) {
+          out.innerHTML = `<p class="text-slate-500 text-sm italic my-auto">Enter data to see preview here...</p>`;
+          return;
+        }
+
+        let processLines = lines;
+        if (!isProUnlocked && lines.length > 5) {
+          paywall.classList.remove("hidden");
+          processLines = lines.slice(0, 5);
+        } else {
+          paywall.classList.add("hidden");
+        }
+
+        out.innerHTML = "";
+        const mode = currentTool.mode;
+
+        processLines.forEach((text, i) => {
+          const wrapper = document.createElement("div");
+          wrapper.className = "bg-white p-4 rounded-xl shadow-sm flex flex-col items-center w-full max-w-[300px]";
+          
+          if (mode.startsWith("qr")) {
+            const canvas = document.createElement("canvas");
+            wrapper.appendChild(canvas);
+            QRCode.toCanvas(canvas, text, { width: 200, margin: 2, color: { dark: fg, light: bg } }, function (error) {
+              if (error) console.error(error);
+            });
+          } else {
+            // Barcode (code128, ean13, etc.)
+            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            wrapper.appendChild(svg);
+            try {
+              let bcMode = mode === "upc" ? "UPC" : mode;
+              JsBarcode(svg, text, { format: bcMode, lineColor: fg, background: bg, width: 2, height: 80, displayValue: true });
+            } catch (e) {
+              wrapper.innerHTML = `<p class="text-rose-500 text-xs font-bold p-4 text-center">Invalid Data for ${currentTool.toolName}</p>`;
+            }
+          }
+
+          // Single Download Button
+          const btn = document.createElement("button");
+          btn.className = "mt-3 w-full py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs font-bold rounded";
+          btn.textContent = "Download PNG";
+          btn.onclick = () => downloadSingle(wrapper, `${currentTool.slug}-${i+1}.png`);
+          wrapper.appendChild(btn);
+
+          out.appendChild(wrapper);
+        });
+
+      }, 300); // 300ms debounce
+    }
+
+    function downloadSingle(wrapperEl, filename) {
+      const canvas = wrapperEl.querySelector("canvas");
+      if (canvas) {
+        const link = document.createElement("a");
+        link.download = filename;
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      } else {
+        const svg = wrapperEl.querySelector("svg");
+        if(svg) {
+          const svgData = new XMLSerializer().serializeToString(svg);
+          const svgBlob = new Blob([svgData], {type:"image/svg+xml;charset=utf-8"});
+          const svgUrl = URL.createObjectURL(svgBlob);
+          
+          const img = new Image();
+          img.onload = function() {
+            const can = document.createElement("canvas");
+            can.width = svg.getBoundingClientRect().width;
+            can.height = svg.getBoundingClientRect().height;
+            const ctx = can.getContext("2d");
+            ctx.drawImage(img, 0, 0);
+            const link = document.createElement("a");
+            link.download = filename;
+            link.href = can.toDataURL("image/png");
+            link.click();
+            URL.revokeObjectURL(svgUrl);
+          };
+          img.src = svgUrl;
+        }
+      }
+    }
+
+    async function activateLicense() {
+      const key = document.getElementById("licenseKeyInput").value.trim();
+      if (!key) return;
+      try {
+        const res = await fetch("https://api.lemonsqueezy.com/v1/licenses/activate", {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ license_key: key, instance_name: "QRBarcodeTools" })
+        });
+        const data = await res.json();
+        if (data.activated || data.valid) {
+          localStorage.setItem("devconv_pro_unlocked", "true");
+          isProUnlocked = true;
+          generateCodes();
+          alert("Bulk Pro Unlocked!");
+        } else {
+          alert("Invalid license key.");
+        }
+      } catch (e) {
+        alert("Connection error. Try again.");
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
